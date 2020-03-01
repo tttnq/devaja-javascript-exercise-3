@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.9.1/firebase-firestore.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBZrmdcrU0qovI2E7IX2WHx2U8nJrQGoBI",
+            authDomain: "my-led-emoji-project.firebaseapp.com",
+            databaseURL: "https://my-led-emoji-project.firebaseio.com",
+            projectId: "my-led-emoji-project",
+            storageBucket: "my-led-emoji-project.appspot.com",
+            messagingSenderId: "206557391300",
+            appId: "1:206557391300:web:6e6c651261bb217a611c91"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body onload="drawLeds()">
+    <div class="main-content">
+        <div class="emoji-canvas">
+            <h1>Emoji</h1>
+            <canvas id="canvas" width="240" height="240">jees</canvas>
+            <button type="button" id="save-button" onclick="openForm()">Save</button>
+        </div>
+        <img src="pics/next-arrow.png" alt="right arrow ->" width="10%" id="arrow">
+        <div class="popup">
+            <h3>Save your emoji</h3>
+            <form>
+                <label>Name:</label>
+                <br>
+                <input type="text" maxlength="10" placeholder="Emoji's name" id="emoji-name">
+                <br>
+                <button type="button" id="add-button" onclick="writeEmojiData()">Add</button>
+                <button type="button" id="cancel-button" onclick="closeForm()">Cancel</button>
+            </form>
+        </div>
+    </div>
+    <div class="stored-emojis wrapper" id="stored-emojis">
+    </div>
+    <br>
+    <img src="" id="pic">
+    <script src="script.js"></script>
+
+</html>
